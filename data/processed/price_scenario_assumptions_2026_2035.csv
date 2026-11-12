@@ -1,0 +1,5 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: price_scenario_assumptions_2026_2035.csv>index,scenario,energy_2026,energy_2027_2030,energy_2031_2035,network_2026_2030,network_2031_2035,levies_2026_2030,levies_2031_2035
+0,Low-cost transition,-0.02,-0.025,-0.01,0.01,0.0,-0.01,0.0
+1,Central,0.02,-0.01,0.0,0.03,0.01,0.0,0.005
+2,High-cost / constrained,0.08,0.02,0.015,0.05,0.02,0.015,0.01

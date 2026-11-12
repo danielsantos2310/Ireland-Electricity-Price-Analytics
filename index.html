@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Independent analysis of Irish business electricity prices, the 2022 shock and transparent 2035 scenarios." />
+  <title>Ireland Electricity Price Analytics</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#story">Skip to the story</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Back to top"><span>IRELAND</span><b>/ ENERGY / DATA</b></a>
+    <nav aria-label="Primary navigation">
+      <a href="#shock">Shock</a><a href="#bands">Who pays</a><a href="#forecast">Forecasting</a><a href="#scenarios">2035</a>
+    </nav>
+  </header>
+
+  <main id="story">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Project 02 · Official Irish & EU data · 2015–2035</p>
+        <h1>Ireland’s electricity prices <em>changed regime.</em></h1>
+        <p class="lede">Business electricity was broadly stable for years. Then the 2021–2022 energy crisis rewrote the curve. This story follows the shock, who paid what, what forecasting could—and could not—learn, and three transparent paths to 2035.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#shock">Explore the story</a>
+          <a class="button ghost" href="https://colab.research.google.com/github/danielsantos2310/Ireland-Electricity-Price-Analytics/blob/main/notebooks/Ireland_Electricity_Price_Analytics_Final.ipynb" target="_blank" rel="noreferrer">Open the analysis</a>
+        </div>
+        <p class="micro">Observed history: SEAI / Eurostat / SEMOpx / CSO. 2035 outputs are analytical scenarios, not official forecasts.</p>
+      </div>
+      <div class="hero-tape reveal" aria-label="Historical Irish business electricity price line">
+        <div class="tape-label"><span>2015</span><strong>price tape</strong><span>2025</span></div>
+        <canvas id="heroChart" aria-label="Business electricity price history"></canvas>
+        <div class="hero-stats">
+          <div><span>2015</span><b id="hero2015">13.79</b><small>c/kWh</small></div>
+          <div class="shock-stat"><span>Peak · 2022 S2</span><b>28.40</b><small>c/kWh</small></div>
+          <div><span>2025</span><b id="hero2025">23.49</b><small>c/kWh</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Key findings">
+      <div><span>10-year change</span><b>+70.3%</b></div>
+      <div><span>2022 peak</span><b>28.4 c/kWh</b></div>
+      <div><span>2025 S2 · Band IG</span><b>15.9 c/kWh</b></div>
+      <div><span>2035 central · real</span><b>24.4 c/kWh</b></div>
+    </section>
+
+    <section id="shock" class="story-section section-shell">
+      <div class="section-intro reveal">
+        <p class="chapter">01 / The break</p>
+        <h2>For years, prices barely moved. Then the market broke upward.</h2>
+        <p>From 2015 through 2020, the annual business price sat in a narrow range around 12–14 c/kWh. The crisis arrived quickly: gas and wholesale electricity surged, and retail prices followed.</p>
+      </div>
+      <div class="chart-card reveal">
+        <div class="chart-head"><div><p class="kicker">Annual average · ex VAT</p><h3>Business electricity and gas</h3></div><div class="chart-note">c/kWh</div></div>
+        <canvas id="annualChart" aria-label="Annual business electricity and gas prices"></canvas>
+      </div>
+      <div class="callout-grid reveal">
+        <article><span>2021 → 2022</span><strong>+54.3%</strong><p>Annual-average business electricity price.</p></article>
+        <article><span>Gas · same year</span><strong>+81.7%</strong><p>Business gas rose even faster.</p></article>
+        <article><span>2025 vs 2015</span><strong>+70.3%</strong><p>Prices cooled from the peak, but did not rewind.</p></article>
+      </div>
+    </section>
+
+    <section class="story-section dark-band">
+      <div class="section-shell split-grid">
+        <div class="section-intro reveal">
+          <p class="chapter">02 / Wholesale shock</p>
+          <h2>The spot market explains the crisis. It does not automatically predict retail.</h2>
+          <p>SEMOpx’s annual Day-Ahead Market average jumped to €225.57/MWh in 2022, then fell sharply. Retail prices eased more slowly because retail pricing also reflects procurement, hedging, networks, taxes and contract timing.</p>
+        </div>
+        <div class="chart-card inverse reveal">
+          <div class="chart-head"><div><p class="kicker">SEMOpx Day-Ahead Market</p><h3>Annual wholesale benchmark</h3></div><div class="chart-note">€/MWh</div></div>
+          <canvas id="wholesaleChart" aria-label="SEMOpx annual Day-Ahead Market price"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="bands" class="story-section section-shell">
+      <div class="section-intro reveal">
+        <p class="chapter">03 / Who pays what</p>
+        <h2>Scale changes the unit price.</h2>
+        <p>In 2025 S2, the largest public non-household consumption band paid materially less per kWh than small and mid-sized businesses. This matters for any later data-centre comparison.</p>
+      </div>
+      <div class="band-layout">
+        <div class="chart-card reveal"><canvas id="bandsChart" aria-label="2025 S2 electricity prices by business consumption band"></canvas></div>
+        <aside class="band-focus reveal">
+          <p>Largest-user band</p><b>IG</b><strong>15.9 c/kWh</strong><span>&gt;150,000 MWh/year</span>
+          <hr />
+          <p>Weighted business average</p><strong>22.7 c/kWh</strong>
+          <small>Band IG is a public benchmark—not a data-centre tariff or a negotiated contract.</small>
+        </aside>
+      </div>
+    </section>
+
+    <section id="forecast" class="story-section section-shell">
+      <div class="section-intro reveal">
+        <p class="chapter">04 / Prediction reality</p>
+        <h2>The simplest forecast was the hardest to beat.</h2>
+        <p>Rolling-origin validation from 2018 S1 to 2025 S2 tested trend, Holt and gas-augmented models against a persistence baseline. Complexity did not win.</p>
+      </div>
+      <div class="forecast-layout">
+        <div class="chart-card reveal"><canvas id="modelChart" aria-label="Forecast model RMSE comparison"></canvas></div>
+        <div class="model-verdict reveal">
+          <span>Best RMSE</span><strong>2.43</strong><b>c/kWh</b>
+          <p>Naive: next semester ≈ last observed price.</p>
+          <div class="rule"></div>
+          <p class="small">Lagged wholesale features were useful explanatory variables, but still failed to beat the naive benchmark on the crisis-period walk-forward test.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenarios" class="story-section scenario-section">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="chapter">05 / 2035</p>
+          <h2>So the future is a range—not one magic number.</h2>
+          <p>Each scenario starts from the observed 2025 price structure, then applies explicit assumptions to Energy & Supply, Network Costs and Taxes/Levies. Switch customer type and price basis to see the path.</p>
+        </div>
+        <div class="scenario-controls reveal" role="group" aria-label="Scenario controls">
+          <div><span>Customer</span><button class="seg active" data-customer="weighted">Weighted business</button><button class="seg" data-customer="ig">Band IG</button></div>
+          <div><span>Price basis</span><button class="seg active" data-basis="real">Real 2025 money</button><button class="seg" data-basis="nominal">Nominal</button></div>
+        </div>
+        <div class="scenario-grid">
+          <div class="chart-card reveal"><canvas id="scenarioChart" aria-label="2035 electricity price scenario paths"></canvas></div>
+          <div class="scenario-readout reveal">
+            <p id="readoutCustomer">Weighted-average business</p>
+            <div class="scenario-row low"><span>Low-cost transition</span><strong id="lowValue">21.2</strong><small>c/kWh</small></div>
+            <div class="scenario-row central"><span>Central</span><strong id="centralValue">24.4</strong><small>c/kWh</small></div>
+            <div class="scenario-row high"><span>High-cost / constrained</span><strong id="highValue">30.1</strong><small>c/kWh</small></div>
+            <p class="small">2035 values. Analytical sensitivities—not official forecasts or confidence intervals.</p>
+          </div>
+        </div>
+
+        <div class="component-lab reveal">
+          <div class="lab-copy"><p class="kicker">Central scenario · component scrubber</p><h3>What is inside the price?</h3><p>Move through 2025–2035 to see how the central path changes by component.</p></div>
+          <div class="lab-control"><label for="yearSlider">Year <strong id="yearLabel">2025</strong></label><input id="yearSlider" type="range" min="2025" max="2035" value="2025" step="1" /></div>
+          <div class="component-stack" aria-live="polite">
+            <div class="component energy"><span>Energy & supply</span><b id="energyValue">15.71</b></div>
+            <div class="component network"><span>Network</span><b id="networkValue">5.40</b></div>
+            <div class="component levies"><span>Taxes / levies</span><b id="leviesValue">2.38</b></div>
+            <div class="component total"><span>Total</span><b id="totalValue">23.49 c/kWh</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section section-shell conclusion">
+      <div class="section-intro reveal">
+        <p class="chapter">06 / What it means</p>
+        <h2>Energy prices are not one variable. They are a system.</h2>
+      </div>
+      <div class="conclusion-grid reveal">
+        <article><b>01</b><h3>Wholesale shocks matter.</h3><p>They shaped the 2021–2023 crisis, but retail adjusts through contracts, hedging and other cost layers.</p></article>
+        <article><b>02</b><h3>Infrastructure matters too.</h3><p>Network investment can push one component upward even as renewable penetration changes energy costs.</p></article>
+        <article><b>03</b><h3>Customer scale changes exposure.</h3><p>The public Band IG benchmark is materially below the weighted business average.</p></article>
+        <article><b>04</b><h3>Uncertainty belongs in the output.</h3><p>The honest 2035 answer is a range of transparent scenarios, not a false-precision point estimate.</p></article>
+      </div>
+    </section>
+
+    <section class="methodology section-shell">
+      <div class="method-card"><span>Data</span><h3>Official sources</h3><p>SEAI, Eurostat, SEMOpx, CSO and CRU.</p><a href="docs/data_sources.md">View source register →</a></div>
+      <div class="method-card"><span>Method</span><h3>Walk-forward validation</h3><p>Models are tested in time order; no random train/test split.</p><a href="docs/methodology.md">Read methodology →</a></div>
+      <div class="method-card"><span>Code</span><h3>Reproducible notebook</h3><p>The cleaned final notebook contains the analysis and scenario engine.</p><a href="https://colab.research.google.com/github/danielsantos2310/Ireland-Electricity-Price-Analytics/blob/main/notebooks/Ireland_Electricity_Price_Analytics_Final.ipynb" target="_blank" rel="noreferrer">Open Colab →</a></div>
+    </section>
+  </main>
+
+  <footer><p>Independent portfolio analysis by Daniel Santos.</p><div class="footer-links"><a href="https://github.com/danielsantos2310/Ireland-Electricity-Price-Analytics" target="_blank" rel="noreferrer">GitHub repository ↗</a><a href="#top" id="backToTop">Back to top ↑</a></div></footer>
+</body>
+</html>
