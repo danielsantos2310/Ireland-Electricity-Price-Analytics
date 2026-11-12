@@ -36,6 +36,10 @@ An independent, reproducible analysis of Irish business electricity prices, the 
 └── src/
 ```
 
+## Tech & topics
+
+`Python` · `pandas` · `time-series` · `forecasting` · `data-analysis` · `data-visualization` · `energy` · `Ireland` · `electricity-prices`
+
 ## Sources
 
 Primary evidence comes from **SEAI**, **Eurostat**, **SEMOpx**, **CSO** and **CRU**. See `docs/data_sources.md`.
