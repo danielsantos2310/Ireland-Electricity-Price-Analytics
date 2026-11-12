@@ -46,7 +46,7 @@ The 2035 outputs are analytical scenarios, **not official forecasts or statistic
 
 ## Deployment
 
-The interactive story is deployed from `main` through GitHub Actions and GitHub Pages.
+**Pages status:** enabled. The interactive story is deployed from `main` through GitHub Actions and GitHub Pages.
 
 ## Reproduce
 
