@@ -44,6 +44,10 @@ Primary evidence comes from **SEAI**, **Eurostat**, **SEMOpx**, **CSO** and **CR
 
 The 2035 outputs are analytical scenarios, **not official forecasts or statistical confidence intervals**. Band IG is a public large-user consumption band, not a data-centre tariff.
 
+## Deployment
+
+The interactive story is deployed from `main` through GitHub Actions and GitHub Pages.
+
 ## Reproduce
 
 Open the final notebook in Jupyter or Colab and run top-to-bottom. Some source cells download official public datasets directly; large SEMOpx look-back workbooks are not committed to the repository.
