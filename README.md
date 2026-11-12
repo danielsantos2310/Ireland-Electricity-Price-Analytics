@@ -6,7 +6,7 @@ An independent, reproducible analysis of Irish business electricity prices, the 
 ## Explore
 
 - **Interactive story:** https://danielsantos2310.github.io/Ireland-Electricity-Price-Analytics/
-- **Open final notebook in Colab:** https://colab.research.google.com/github/danielsantos2310/Ireland-Electricity-Price-Analytics/blob/main/notebooks/Ireland_Electricity_Price_Analytics_Final.ipynb
+- **Open final notebook in Colab:** https://colab.research.google.com/github/danielsantos2310/Ireland-Electricity-Price-Analytics/blob/1c418ba5849dfbb8c10f81eaea18adaac21c1348/notebooks/Ireland_Electricity_Price_Analytics_Final.ipynb
 
 ## Research question
 
