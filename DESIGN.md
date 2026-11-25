@@ -1,27 +1,50 @@
-# Design direction — Ireland Electricity Price Analytics
+# Design direction — Electricity Price Analytics
 
-## Subject
-Irish business electricity pricing: a calm pre-crisis market, a violent 2021–2022 shock, then an uncertain transition toward 2035.
+## Series role
+
+Project 02 of the **Daniel Santos Infrastructure Analytics Series**. The site must feel like one member of a coherent research product family while preserving this project's subject-specific identity.
 
 ## Audience
-Recruiters, data/energy professionals and technically curious readers who need the story quickly but can inspect methodology when they want.
+
+Recruiters, data/energy professionals, infrastructure practitioners and technically curious readers. The interface must support two reading speeds:
+
+1. a two-minute executive scan;
+2. a detailed evidence/methodology review.
 
 ## Single job
-Make the reader understand **what changed, who paid what, why prediction is difficult, and why scenarios are more honest than one 2035 number**.
+
+What drove Ireland’s business-electricity price shock, and what is defensible to say about the path to 2035?
 
 ## Visual system
-- Ink: `#08131B`
-- Deep market blue: `#102432`
-- Paper: `#F3F7F8`
-- Ice blue: `#7BDFF2`
-- Shock amber: `#FFB454`
-- Alert coral: `#FF6B61`
-- Recovery green: `#79D8A4`
 
-Typography uses a restrained editorial serif for thesis lines and a system sans/mono stack for data.
+- Background: `#06111B`
+- Deep surface: `#0B1A26`
+- Primary text: `#F2F7FA`
+- Muted text: `#91A6B5`
+- Project accent: `#FFB454`
+- Evidence green: `#7ED8A4`
+- Constraint amber: `#F3B45D`
+- Risk coral: `#F27668`
+
+Typography is a disciplined system sans for narrative, with monospace reserved for project numbers, evidence labels, units and provenance.
 
 ## Signature
-A **market-tape line** runs through the hero and section transitions: quiet before 2021, a sudden peak in 2022, then a cooling but elevated plateau. It encodes the actual story rather than acting as decoration.
 
-## Motion
-One orchestrated price-line draw on load plus subtle section reveals. Respect `prefers-reduced-motion`.
+A market-tape line that moves from pre-crisis stability into the 2021–2022 shock and post-shock plateau.
+
+## Information architecture
+
+Every project follows the same mental model:
+
+`Question → Evidence → Analysis → Finding → Limitations → Sources → Next project`.
+
+The shared series ribbon and five-project navigator are persistent family elements. Project-specific story sections remain independent.
+
+## Interaction contract
+
+- Core narrative remains readable without JavaScript.
+- Interactive charts enhance understanding; they never hide the conclusion.
+- Keyboard focus must be visible.
+- Motion respects `prefers-reduced-motion`.
+- Mobile layouts preserve reading order and never require horizontal page scrolling.
+- Methodology and source links must remain available from the page, not only from GitHub.
